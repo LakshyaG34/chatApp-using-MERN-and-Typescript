@@ -7,16 +7,16 @@ import { useAuthContext } from "./context/authContext";
 import SideBar from "./components/sidebar/sideBar";
 
 function App() {
-  const { authUser, loading } = useAuthContext(); // Get loading state
+  const { authUser } = useAuthContext(); // Get loading state
   
   // Show loading indicator while checking authentication
-  if (loading) {
-    return (
-      <div className="h-screen bg-black flex items-center justify-center">
-        <div className="text-white">Loading...</div>
-      </div>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <div className="h-screen bg-black flex items-center justify-center">
+  //       <div className="text-white">Loading...</div>
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="h-screen bg-black flex items-center justify-center">

@@ -18,6 +18,7 @@ const io = new Server(server,{
     cors : {
         origin : ["http://localhost:5173"],
         methods : ["GET", "POST"],
+        credentials: true,
     }
 });
 
@@ -29,7 +30,10 @@ export const getReceiverSocketId = (receiverId : string) =>{
 
 app.use(cookieParser());
 app.use(express.json())
-app.use(cors());
+app.use(cors({
+    origin: "http://localhost:5173", // frontend URL
+    credentials: true,               // allow cookies
+}));
 
 app.use("/api/auth", authRoute)
 app.use("/api/users", usersRoute)

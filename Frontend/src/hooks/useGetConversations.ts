@@ -7,7 +7,10 @@ const useGetConversations = () =>{
         const getConversations = async() =>{
             setLoading(true);
             try{
-                const res = await fetch("http://localhost:4000/api/users");
+                const res = await fetch("http://localhost:4000/api/users", {
+                method: "GET",
+                credentials: "include", // <- this sends cookies
+                });
                 const data = await res.json();
                 if(data.error)
                 {
@@ -25,7 +28,7 @@ const useGetConversations = () =>{
         };
         getConversations();
     }, []);
-    return{loading, conversations};
+    return {loading, conversations};
 }
 
 export default useGetConversations;

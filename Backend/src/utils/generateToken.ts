@@ -14,7 +14,7 @@ const generateTokenAndSetCookie = async(userId : string, res : Response) : Promi
         res.cookie("jwt", token, {
             maxAge : 15*24*60*60*1000,
             httpOnly:true,
-            sameSite:"strict",
+            sameSite:"lax",
             secure:true
         })
 }
