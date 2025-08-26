@@ -1,6 +1,31 @@
 import React, {useState} from "react"
 import {useNavigate} from "react-router-dom"
+import toast from "react-hot-toast";
 
+interface UserTypes{
+    name : string;
+    email : string;
+    password : string;
+    confirmPassword : string;
+}
+
+const handleInputErrors = ({name, email, password, confirmPassword} : UserTypes) =>{
+    if(!name || !email || !password || !confirmPassword)
+    {
+        toast.error("Please fill in all Fields");
+        return false;
+    }
+    if(password !== confirmPassword)
+    {
+        toast.error("Passwords Does not match");
+        return false;
+    }
+    if(password.length < 8)
+    {
+        toast.error("Length of Password must be greater than or equal to 8")
+    }
+    return true;    
+}
 const Signup = () =>{
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -11,6 +36,11 @@ const Signup = () =>{
 
     const handleSubmit = async(e : React.FormEvent) : Promise<void> =>{
         e.preventDefault();
+        const success = handleInputErrors({name, email, password, confirmPassword});
+        if(!success)
+        {
+            return;
+        }
         try{
             const res = await fetch("http://localhost:4000/api/auth/signup",{
                 method : "POST",

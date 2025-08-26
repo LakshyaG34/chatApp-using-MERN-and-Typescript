@@ -1,9 +1,11 @@
 import React, {useState} from "react"
 import {useNavigate} from "react-router-dom"
+import { useAuthContext } from "../context/authContext";
 
 const Login = () =>{
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const { setAuthUser } = useAuthContext();
     
     const navigate = useNavigate();
 
@@ -21,6 +23,9 @@ const Login = () =>{
             }
             const data = await res.json();
             console.log("Login success", data);
+
+            setAuthUser(data);
+
             navigate("/chat")
         }catch(err)
         {
