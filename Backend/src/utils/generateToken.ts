@@ -3,7 +3,7 @@ dotenv.config();
 
 import jwt from "jsonwebtoken"
 
-import express, {Response} from "express"
+import {Response} from "express"
 import { JWT_SECRET } from "../config";
 
 const generateTokenAndSetCookie = async(userId : string, res : Response) : Promise<Response | void> =>{
@@ -14,7 +14,7 @@ const generateTokenAndSetCookie = async(userId : string, res : Response) : Promi
         res.cookie("jwt", token, {
             maxAge : 15*24*60*60*1000,
             httpOnly:true,
-            sameSite:"lax",
+            sameSite:"strict",
             secure:true
         })
 }

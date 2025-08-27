@@ -4,7 +4,8 @@ import Login from "./pages/login";
 import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import { useAuthContext } from "./context/authContext";
-import SideBar from "./components/sidebar/sideBar";
+// import SideBar from "./components/sidebar/sideBar";
+import Chat from "./pages/chat";
 
 function App() {
   const { authUser } = useAuthContext(); // Get loading state
@@ -39,7 +40,7 @@ function App() {
           />
           <Route
             path="/chat"
-            element={authUser ? <SideBar /> : <Navigate to="/login" />}
+            element={authUser ? <Chat /> : <Navigate to="/login" />}
           />
         </Routes>
       </BrowserRouter>
