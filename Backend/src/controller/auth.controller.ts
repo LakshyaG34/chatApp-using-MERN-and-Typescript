@@ -64,8 +64,15 @@ export const login = async (
       return res.status(400).json({ message: "Incorrect Password" });
     }
     generateTokenAndSetCookie(user._id, res);
-
-    return res.status(200).json({ message: "Logged In Successfully" });
+    const token = req.cookies.jwt;
+    return res.status(200).json({
+      token,
+      user: {
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+      },
+    });
     // console.log("Logged In successfully", user);
   } catch (err) {
     console.log("Error loging in", err);

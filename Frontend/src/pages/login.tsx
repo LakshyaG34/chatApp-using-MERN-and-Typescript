@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import {useNavigate} from "react-router-dom"
+// import {useNavigate} from "react-router-dom"
 import { useAuthContext } from "../context/authContext";
 
 const Login = () =>{
@@ -7,7 +7,7 @@ const Login = () =>{
     const [password, setPassword] = useState("");
     const { setAuthUser } = useAuthContext();
     
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const handleSubmit = async(e : React.FormEvent) : Promise<void> =>{
         e.preventDefault();
@@ -15,7 +15,8 @@ const Login = () =>{
             const res = await fetch("http://localhost:4000/api/auth/login",{
                 method : "POST",
                 headers: {"Content-type" : "application/json"},
-                body : JSON.stringify({email, password})
+                body : JSON.stringify({email, password}),
+                credentials: "include"
             });
             if(!res.ok)
             {
@@ -24,9 +25,8 @@ const Login = () =>{
             const data = await res.json();
             console.log("Login success", data);
 
-            setAuthUser(data);
-
-            navigate("/chat")
+            setAuthUser("logged in");
+            // navigate("/chat")
         }catch(err)
         {
             console.log("Cannot Fetch", err)

@@ -19,13 +19,13 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
   const [authUser, setAuthUserState] = useState<string | null>(null);
 
   useEffect(() => {
-    const token = Cookies.get("chat-token") || null;
+    const token = Cookies.get("jwt") || null;
     setAuthUserState(token);
   }, []);
 
   const setAuthUser = (token: string | null) => {
-    if (token) Cookies.set("chat-token", token, { expires: 7 });
-    else Cookies.remove("chat-token");
+    if (token) Cookies.set("jwt", token, { expires: 7 });
+    else Cookies.remove("jwt");
     setAuthUserState(token);
   };
 

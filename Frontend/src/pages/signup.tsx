@@ -2,6 +2,7 @@ import React, {useState} from "react"
 import {useNavigate} from "react-router-dom"
 import toast from "react-hot-toast";
 
+
 interface UserTypes{
     name : string;
     email : string;
