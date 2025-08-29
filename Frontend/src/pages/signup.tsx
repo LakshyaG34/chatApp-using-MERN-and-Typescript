@@ -8,6 +8,7 @@ interface UserTypes{
     email : string;
     password : string;
     confirmPassword : string;
+    profilePic ?: File;
 }
 
 const handleInputErrors = ({name, email, password, confirmPassword} : UserTypes) =>{
@@ -32,7 +33,9 @@ const Signup = () =>{
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
-    
+    const [profilePic, setProfilePic] = useState<File | null>(null);
+
+
     const navigate = useNavigate();
 
     const handleSubmit = async(e : React.FormEvent) : Promise<void> =>{
@@ -43,10 +46,20 @@ const Signup = () =>{
             return;
         }
         try{
+            const formData = new FormData();
+            formData.append("name", name);
+            formData.append("email", email);
+            formData.append("password", password);
+            formData.append("confirmPassword", confirmPassword);
+            if(profilePic)
+            {
+                formData.append("profilePic", profilePic);
+            }
+
+
             const res = await fetch("http://localhost:4000/api/auth/signup",{
-                method : "POST",
-                headers: {"Content-type" : "application/json"},
-                body : JSON.stringify({name, email, password, confirmPassword})
+                 method: "POST",
+                body: formData,
             });
             if(!res.ok)
             {
@@ -80,6 +93,11 @@ const Signup = () =>{
                     <div className="flex flex-col text-center gap-2">
                         <label>Confirm Password</label>
                         <input placeholder = "Confirm your Password" type="password" value={confirmPassword} onChange={(e) =>setConfirmPassword(e.target.value)} className="border border-white rounded-full px-2 py-2 text-center"/>
+                    </div>
+                    <div className="flex flex-col text-center gap-2">
+                        <label>Profile Picture</label>
+                        <input type="file" onChange={(e) => setProfilePic(e.target.files ? e.target.files[0] : null)}
+              className="text-white"/>
                     </div>
                     <button className="border rounded-2xl px-2 py-2 hover:bg-amber-300 cursor-pointer">SUBMIT</button>
                 </form>
