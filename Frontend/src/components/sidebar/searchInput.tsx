@@ -10,7 +10,6 @@ import { IoSearchSharp } from "react-icons/io5";
 
 interface ConversationType {
   name: string;
-  // add other properties if needed
 }
 
 const SearchInput = () => {
@@ -42,7 +41,7 @@ const SearchInput = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex items-center gap-2 border border-white text-white"
+      className="flex items-center gap-2 text-white"
     >
       <input
         type="text"

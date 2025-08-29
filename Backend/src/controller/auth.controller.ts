@@ -4,6 +4,8 @@ import { AuthTypes } from "../types/auth";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import generateTokenAndSetCookie from "../utils/generateToken";
+import { AuthenticatedRequest } from "../types/auth";
+
 
 export const signup = async (
   req: Request,
@@ -77,6 +79,16 @@ export const login = async (
   } catch (err) {
     console.log("Error loging in", err);
     res.status(500).json({ Error: "Internal Server Error" });
+  }
+};
+
+export const getMe = async (req : AuthenticatedRequest, res : Response) => {
+  // protectRoute already sets req.user
+  try {
+    const user = await Auth.findById(req.user?._id).select("-password");
+    res.json({ user });
+  } catch (err) {
+    res.status(500).json({ error: "Server error" });
   }
 };
 

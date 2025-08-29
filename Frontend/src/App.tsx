@@ -20,7 +20,7 @@ function App() {
   // }
 
   return (
-    <div className="h-screen bg-black flex items-center justify-center">
+    <div className="h-screen flex items-center justify-center">
       <Toaster position="top-right" reverseOrder={false} />
       <BrowserRouter>
         <Routes>

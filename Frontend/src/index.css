@@ -1,2 +1,18 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+.global-bg {
+  min-height: 100vh;
+  background: linear-gradient(
+    342.27deg,
+    #171717 16%,
+    #9C356D 18%,
+    #F9784C 20%,
+    #FCD68B 22%,
+    #FFFAEF 24%,
+    #FCD68B 84%,
+    #F9784C 86%,
+    #9C356D 88%,
+    #171717 90%
+  );
+}

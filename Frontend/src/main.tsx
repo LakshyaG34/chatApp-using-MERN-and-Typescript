@@ -9,7 +9,9 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <AuthContextProvider>
       <SocketContextProvider>
-        <App />
+        <div className='global-bg'>
+          <App />
+        </div>
       </SocketContextProvider>
     </AuthContextProvider>
   </StrictMode>,

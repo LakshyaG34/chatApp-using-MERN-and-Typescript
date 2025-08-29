@@ -14,24 +14,24 @@ const Messages = () =>{
         }, 100);
     }, [messages]);
 
-    return(
-        <div>
+    return (
+        <div className="flex flex-col h-[calc(100vh-120px)] overflow-y-auto p-2">
             {
-                !loading && 
-                messages.length>0 &&
+                !loading &&
+                messages.length > 0 &&
                 messages.map((message) => (
-                    <div key = {message._id} ref = {lastMsgRef}>
-                        <Message message = {message}/>
+                    <div key={message._id}>
+                        <Message message={message} />
                     </div>
                 ))
             }
             {
                 loading &&
-                [...Array(3)].map((_, idx) => <MsgFrame key={idx}/>)
+                [...Array(3)].map((_, idx) => <MsgFrame key={idx} />)
             }
             {
                 !loading &&
-                messages.length===0 &&
+                messages.length === 0 &&
                 (
                     <p className="text-center">Send a Message to start the conversation</p>
                 )

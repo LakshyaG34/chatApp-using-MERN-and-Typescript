@@ -25,7 +25,7 @@ const Login = () =>{
             const data = await res.json();
             console.log("Login success", data);
 
-            setAuthUser("logged in");
+            setAuthUser(data.user);
             // navigate("/chat")
         }catch(err)
         {
