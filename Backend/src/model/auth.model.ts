@@ -1,7 +1,5 @@
 import mongoose from "mongoose"
 
-
-
 const authSchema = new mongoose.Schema({
     name:{
         type: String,
@@ -18,6 +16,10 @@ const authSchema = new mongoose.Schema({
     confirmPassword:{
         type: String,
         // required: true
+    },
+    profilePic:{
+        data:Buffer,
+        contentType: String
     }
 }, {timestamps: true});
 

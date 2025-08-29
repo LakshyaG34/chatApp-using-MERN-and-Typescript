@@ -2,10 +2,10 @@ import express, { Request, Response } from "express";
 import Auth from "../model/auth.model";
 import { AuthTypes } from "../types/auth";
 import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
+// import jwt from "jsonwebtoken";
 import generateTokenAndSetCookie from "../utils/generateToken";
 import { AuthenticatedRequest } from "../types/auth";
-
+import { upload } from "../middleware/protectImageRoute";
 
 export const signup = async (
   req: Request,
@@ -30,10 +30,22 @@ export const signup = async (
     // const hashedPassword = bcrypt.genSalt(10, password);
     const hashedPassword = await bcrypt.hash(password, salt);
 
+
+    //Handle Image upload
+    let profilePic = undefined;
+    if(req.file)
+    {
+      profilePic = {
+        data: req.file.buffer,
+        contentType: req.file.mimetype,
+      }
+    }
+
     const newUser = await Auth.create({
       name,
       email,
       password: hashedPassword,
+      profilePic
     });
     if (newUser) {
       res.status(200).json({ message: "Signup Successfull" });

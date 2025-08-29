@@ -1,5 +1,4 @@
 import { Request } from "express";
-import { Document } from "mongoose";
 
 export interface UserPayload {
   _id: string;
@@ -11,6 +10,12 @@ export interface UserPayload {
 export interface AuthenticatedRequest extends Request {
   user?: UserPayload;
 }
+// export interface ProfilePicParams extends Request {
+//   id: string;
+// }
+// interface ProfilePicParams {
+  
+// }
 
 export interface AuthTypes{
     name: string;
