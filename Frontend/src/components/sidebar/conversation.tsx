@@ -61,7 +61,7 @@ const Conversation =({conversation, lastIdx}: ConversationProps) =>{
                     </div>
                     <div className="flex flex-col flex-1">
                         <div className="flex gap-3 justify-between">
-                            <p className="font-bold text-gray-200">{conversation.name}</p>
+                            <p className="font-bold text-gray-200 font-[Orbitron,sans-serif]">{conversation.name}</p>
                         </div>
                     </div>
             </div>

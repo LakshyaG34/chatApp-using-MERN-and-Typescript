@@ -60,7 +60,7 @@ const Message = ({ message }: MessageProps, ) => {
                     <img src={profilePicUrl} alt="Profile" />
                 </div>
             </div>
-            <div className={`chat-bubble max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg break-words text-white ${bubbleBgColor} ${shakeClass} pb-2 break-all style={{ overflowWrap: "anywhere" }`}>{message.message}</div>
+            <div className={`font-[Orbitron,sans-serif] font-bold chat-bubble max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg break-words text-white ${bubbleBgColor} ${shakeClass} pb-2 break-all style={{ overflowWrap: "anywhere" }`}>{message.message}</div>
         </div>
     )
 }

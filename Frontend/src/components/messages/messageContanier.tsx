@@ -35,8 +35,8 @@ const MessageContainer = () =>{
             ) : (
                 <>
                     <div className="bg-slate-500 px-4 py-2 mb-2">
-                        <span>To:</span>
-                        <span>{selectedConversation.name}</span>
+                        <span className="font-[Orbitron,sans-serif]">To : </span>
+                        <span className="font-[Orbitron,sans-serif]">{selectedConversation.name}</span>
                     </div>
                     <div className="flex-1 overflow-y-auto overflow-x-hidden">
                         <Messages/>
