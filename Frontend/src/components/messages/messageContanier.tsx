@@ -29,7 +29,7 @@ const MessageContainer = () =>{
     }, [setSelectedConversation]);
 
     return(
-        <div>
+        <div className="flex flex-col h-full">
             {!selectedConversation ? (
                 <NoChatSelected/>
             ) : (
@@ -38,7 +38,9 @@ const MessageContainer = () =>{
                         <span>To:</span>
                         <span>{selectedConversation.name}</span>
                     </div>
-                    <Messages/>
+                    <div className="flex-1 overflow-y-auto overflow-x-hidden">
+                        <Messages/>
+                    </div>
                     <MessageInput/>
 
                 </>

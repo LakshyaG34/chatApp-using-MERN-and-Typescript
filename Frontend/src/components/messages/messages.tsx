@@ -15,7 +15,7 @@ const Messages = () =>{
     }, [messages]);
 
     return (
-        <div className="flex flex-col h-[calc(100vh-120px)] overflow-y-auto p-2">
+        <div className="flex flex-col p-2 min-w-0">
             {
                 !loading &&
                 messages.length > 0 &&
