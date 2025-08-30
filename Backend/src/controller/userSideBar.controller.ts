@@ -7,9 +7,9 @@ export const getUsersForSideBar = async(req : AuthenticatedRequest, res : Respon
     try{
         const loggedInUser = req.user?._id;
 
-        console.log(loggedInUser);
+        // console.log(loggedInUser);
         const filteredUser = await Auth.find({_id : {$ne : loggedInUser}}).select("-password");
-        console.log(filteredUser);
+        // console.log(filteredUser);
 
         res.status(200).json(filteredUser);
     }catch(err)

@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express";
+import { Request, Response } from "express";
 import Auth from "../model/auth.model";
 import { AuthTypes } from "../types/auth";
 import bcrypt from "bcryptjs";
@@ -78,16 +78,20 @@ export const login = async (
       return res.status(400).json({ message: "Incorrect Password" });
     }
     generateTokenAndSetCookie(user._id, res);
-    const token = req.cookies.jwt;
-    return res.status(200).json({
-      token,
+    // const token = req.cookies.jwt;
+    res.status(200).json({
+      // token,
       user: {
         _id: user._id,
         name: user.name,
         email: user.email,
       },
     });
-    // console.log("Logged In successfully", user);
+    console.log("Logged In successfully", {
+      _id : user._id,
+      name : user.name,
+      email : user.email
+    });
   } catch (err) {
     console.log("Error loging in", err);
     res.status(500).json({ Error: "Internal Server Error" });

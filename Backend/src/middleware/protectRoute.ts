@@ -17,10 +17,10 @@ const protectRoute = async (
 ): Promise<Response | void> => {
   try {
     const token = req.cookies.jwt;
-    console.log("The token is :---", token);
-    console.log("The token is :-", JSON.stringify(token, null, 2));
-    console.log("Type of token:", typeof token);
-    console.log("The value of cookie is :-", req.cookies);
+    // console.log("The token is :---", token);
+    // console.log("The token is :-", JSON.stringify(token, null, 2));
+    // console.log("Type of token:", typeof token);
+    // console.log("The value of cookie is :-", req.cookies);
 
     if (!token) {
       return res

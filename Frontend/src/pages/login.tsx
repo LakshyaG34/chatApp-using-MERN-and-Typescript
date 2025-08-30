@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 // import {useNavigate} from "react-router-dom"
 import { useAuthContext } from "../context/authContext";
+import { Link } from "react-router-dom";
 
 const Login = () =>{
     const [email, setEmail] = useState("");
@@ -48,7 +49,10 @@ const Login = () =>{
                     <button className="border rounded-2xl px-2 py-2 hover:bg-amber-300 cursor-pointer">SUBMIT</button>
                 </form>
             </div>
-
+            <span>
+                Don't Have An Account :-
+                <Link to="/signup" className="text-red-400 hover:text-blue-300"> SIGNUP</Link>
+            </span>
         </div>
     )
 }
