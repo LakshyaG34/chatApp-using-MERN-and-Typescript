@@ -74,8 +74,17 @@ const Signup = () => {
     }
   };
   return (
-    <div className="flex flex-col items-center text-white gap-2">
-      <span>SIGN UP</span>
+    <div className="font-[Orbitron,sans-serif] flex flex-col items-center text-white gap-2">
+      <span
+        className="font-bold text-3xl tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500 [text-shadow:0_0_8px_rgba(236,72,153,0.9),0_0_16px_rgba(236,72,153,0.6),0_0_48px_rgba(236,72,153,0.5)]
+      hover:[text-shadow:0_0_12px_rgba(236,72,153,1),
+                   0_0_24px_rgba(236,72,153,0.9),
+                   0_0_48px_rgba(236,72,153,0.7)]
+transition duration-300 mb-8
+  "
+      >
+        SIGN UP
+      </span>
       <div className="border border-white px-8 py-8 rounded-2xl">
         <form
           className="flex flex-col items-center gap-4"
@@ -131,9 +140,17 @@ const Signup = () => {
               className="text-white"
             />
           </div>
-          <button className="border rounded-2xl px-2 py-2 hover:bg-amber-300 cursor-pointer">
-            SUBMIT
-          </button>
+          <button
+              className="relative inline-block px-6 py-2 rounded-2xl text-white tracking-wider 
+             bg-black/70 backdrop-blur-md border-2 border-transparent
+             [background:linear-gradient(#0a0a0a,#0a0a0a) padding-box,linear-gradient(to right,#8b5cf6,#ec4899,#3b82f6) border-box] 
+             transition duration-300 ease-in-out 
+             hover:shadow-[0_0_20px_rgba(236,72,153,0.8)] 
+             hover:scale-105 
+             focus:outline-none focus:ring-2 focus:ring-pink-500/70"
+            >
+              SUBMIT
+            </button>
         </form>
       </div>
     </div>
