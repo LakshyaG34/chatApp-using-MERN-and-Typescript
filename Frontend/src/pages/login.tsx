@@ -33,7 +33,7 @@ const Login = () => {
     }
   };
   return (
-    <div className="flex flex-col items-center text-white gap-14 font-[Orbitron,sans-serif]">
+    <div className="flex flex-col items-center gap-14 font-[Orbitron,sans-serif]">
       <span
         className="font-bold text-3xl tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500 [text-shadow:0_0_8px_rgba(236,72,153,0.9),0_0_16px_rgba(236,72,153,0.6),0_0_48px_rgba(236,72,153,0.5)]
       hover:[text-shadow:0_0_12px_rgba(236,72,153,1),

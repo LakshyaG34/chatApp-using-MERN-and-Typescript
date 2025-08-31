@@ -12,7 +12,7 @@ interface authUser{
 const NoChatSelected = () =>{
     const {authUser} = useAuthContext() as { authUser: authUser | null };
     return(
-        <div className="flex items-center justify-center w-full h-full">
+        <div className="font-[Orbitron,sans-serif] flex items-center justify-center w-full h-full">
             <div className="px-4 text-center sm:text-lg md:text-xl text-gray-200 font-semibold flex flex-col items-center gap-2">
                 <p>Welcome {authUser ? authUser.name : "Guest"}</p>
                 <p>Select a chat to start Messaging</p>
@@ -29,12 +29,12 @@ const MessageContainer = () =>{
     }, [setSelectedConversation]);
 
     return(
-        <div className="flex flex-col h-full">
+        <div className="font-[Orbitron,sans-serif] flex flex-col h-full">
             {!selectedConversation ? (
                 <NoChatSelected/>
             ) : (
                 <>
-                    <div className="bg-slate-500 px-4 py-2 mb-2">
+                    <div className="bg-slate-500 px-4 py-2 mb-2 bg-gradient-to-r from-purple-700 to-blue-700">
                         <span className="font-[Orbitron,sans-serif]">To : </span>
                         <span className="font-[Orbitron,sans-serif]">{selectedConversation.name}</span>
                     </div>

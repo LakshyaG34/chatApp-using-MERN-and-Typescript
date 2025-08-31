@@ -25,7 +25,7 @@ const Message = ({ message }: MessageProps, ) => {
     // const { selectedConversation } = useConversation();
     const fromMe = authUser ? message.senderId === authUser._id : false;
     const chatClass = fromMe ? "chat-end" : "chat-start";
-    const bubbleBgColor = fromMe ? "bg-blue-500" : "";
+    const bubbleBgColor = fromMe ? "bg-white/5 border-pink-500/50  text-[#F715AB] shadow-[0_0_12px_rgba(236,72,153,0.7)] " : "bg-black/30 border-cyan-400/40 text-cyan-200 shadow-[0_0_10px_rgba(34,211,238,0.6)]";
     const shakeClass = message.shouldShake ? "shake" : "";
 
     useEffect(() =>{
@@ -60,7 +60,7 @@ const Message = ({ message }: MessageProps, ) => {
                     <img src={profilePicUrl} alt="Profile" />
                 </div>
             </div>
-            <div className={`font-[Orbitron,sans-serif] font-bold chat-bubble max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg break-words text-white ${bubbleBgColor} ${shakeClass} pb-2 break-all style={{ overflowWrap: "anywhere" }`}>{message.message}</div>
+            <div className={`font-[Orbitron,sans-serif] font-bold chat-bubble max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg break-words border backdrop-blur-md ${bubbleBgColor} ${shakeClass} pb-2 break-all style={{ overflowWrap: "anywhere" }`}>{message.message}</div>
         </div>
     )
 }
