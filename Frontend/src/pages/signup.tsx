@@ -105,7 +105,7 @@ transition duration-300 mb-8
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full max-w-md placeholder-white/60 border border-transparent rounded-full px-2 py-2 text-center bg-black/50 backdrop-blur-md [background:linear-gradient(#0a0a0a,#0a0a0a) padding-box,linear-gradient(to right,#8b5cf6,#ec4899,#3b82f6) border-box] focus:outline-none focus:ring-2 focus:ring-pink-500/70"
+                className="w-full max-w-md placeholder-[#22d3ee] [&::placeholder]:opacity-100 [&::placeholder]:text-shadow-[0_0_3px_#22d3ee,0_0_6px_#8b5cf6] border border-transparent rounded-full px-2 py-2 text-center bg-black/50 backdrop-blur-md [background:linear-gradient(#0a0a0a,#0a0a0a) padding-box,linear-gradient(to right,#8b5cf6,#ec4899,#3b82f6) border-box] focus:outline-none focus:ring-2 focus:ring-pink-500/70"
               />
             </div>
             <div className="flex flex-col text-center gap-1">
@@ -118,7 +118,7 @@ transition duration-300 mb-8
                 type="text"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full max-w-md placeholder-white/60 border border-transparent rounded-full px-2 py-2 text-center bg-black/50 backdrop-blur-md [background:linear-gradient(#0a0a0a,#0a0a0a) padding-box,linear-gradient(to right,#8b5cf6,#ec4899,#3b82f6) border-box] focus:outline-none focus:ring-2 focus:ring-pink-500/70"
+                className="w-full max-w-md placeholder-[#22d3ee] [&::placeholder]:opacity-100 [&::placeholder]:text-shadow-[0_0_3px_#22d3ee,0_0_6px_#8b5cf6] border border-transparent rounded-full px-2 py-2 text-center bg-black/50 backdrop-blur-md [background:linear-gradient(#0a0a0a,#0a0a0a) padding-box,linear-gradient(to right,#8b5cf6,#ec4899,#3b82f6) border-box] focus:outline-none focus:ring-2 focus:ring-pink-500/70"
               />
             </div>
             <div className="flex flex-col text-center gap-1">
@@ -131,7 +131,7 @@ transition duration-300 mb-8
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full max-w-md placeholder-white/60 border border-transparent rounded-full px-2 py-2 text-center bg-black/50 backdrop-blur-md [background:linear-gradient(#0a0a0a,#0a0a0a) padding-box,linear-gradient(to right,#8b5cf6,#ec4899,#3b82f6) border-box] focus:outline-none focus:ring-2 focus:ring-pink-500/70"
+                className="w-full max-w-md placeholder-[#22d3ee] [&::placeholder]:opacity-100 [&::placeholder]:text-shadow-[0_0_3px_#22d3ee,0_0_6px_#8b5cf6] border border-transparent rounded-full px-2 py-2 text-center bg-black/50 backdrop-blur-md [background:linear-gradient(#0a0a0a,#0a0a0a) padding-box,linear-gradient(to right,#8b5cf6,#ec4899,#3b82f6) border-box] focus:outline-none focus:ring-2 focus:ring-pink-500/70"
               />
             </div>
             <div className="flex flex-col text-center gap-1">
@@ -144,7 +144,7 @@ transition duration-300 mb-8
                 type="password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className="w-full max-w-md placeholder-white/60 border border-transparent rounded-full px-2 py-2 text-center bg-black/50 backdrop-blur-md [background:linear-gradient(#0a0a0a,#0a0a0a) padding-box,linear-gradient(to right,#8b5cf6,#ec4899,#3b82f6) border-box] focus:outline-none focus:ring-2 focus:ring-pink-500/70"
+                className="w-full max-w-md placeholder-[#22d3ee] [&::placeholder]:opacity-100 [&::placeholder]:text-shadow-[0_0_3px_#22d3ee,0_0_6px_#8b5cf6] border border-transparent rounded-full px-2 py-2 text-center bg-black/50 backdrop-blur-md [background:linear-gradient(#0a0a0a,#0a0a0a) padding-box,linear-gradient(to right,#8b5cf6,#ec4899,#3b82f6) border-box] focus:outline-none focus:ring-2 focus:ring-pink-500/70"
               />
             </div>
             <div className="relative w-full">

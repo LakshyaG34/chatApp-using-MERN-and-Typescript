@@ -17,7 +17,7 @@ const NoChatSelected = () =>{
                 <p>Welcome {authUser ? authUser.name : "Guest"}</p>
                 <p>Select a chat to start Messaging</p>
                 <TiMessages className="text-3xl md:text-6xl text-center"/>
-            </div>
+            </div>  
         </div>
     )
 }
@@ -29,7 +29,7 @@ const MessageContainer = () =>{
     }, [setSelectedConversation]);
 
     return(
-        <div className="font-[Orbitron,sans-serif] flex flex-col h-full">
+        <div className="font-[Orbitron,sans-serif] flex flex-col flex-1 overflow-y-auto overflow-x-hidden h-full min-w-0 max-w-[300px]">
             {!selectedConversation ? (
                 <NoChatSelected/>
             ) : (

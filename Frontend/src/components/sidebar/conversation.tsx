@@ -6,7 +6,6 @@ interface ConversationProps {
     conversation: {
         _id: string;
         name: string;
-        // add other properties as needed
     };
     lastIdx: boolean;
 }
@@ -48,10 +47,10 @@ const Conversation =({conversation, lastIdx}: ConversationProps) =>{
 
     return(
         <>
-            <div className={`flex gap-2 items-center transition duration-300 ease-in-out hover:bg-gradient-to-r hover:from-purple-900 hover:to-blue-900 hover:[box-shadow:0_0_15px_rgba(236,72,153,0.9),0_0_30px_rgba(59,130,246,0.8)]
+            <div className={`flex gap-2 items-center flex-1 min-w-0 transition duration-300 ease-in-out hover:bg-gradient-to-r hover:from-purple-900 hover:to-blue-900 hover:[box-shadow:0_0_15px_rgba(236,72,153,0.9),0_0_30px_rgba(59,130,246,0.8)]
              border border-transparent rounded p-2 py-1 cursor-pointer
                 ${isSelected ? "bg-gradient-to-r from-purple-700 to-blue-700 [box-shadow:0_0_15px_rgba(59,130,246,0.8),0_0_25px_rgba(236,72,153,0.7)]" : ""}`} onClick = {() => setSelectedConversation(conversation)}>
-                    <div className={`avatar ${isOnline ? "online" : ""}`}>
+                    <div className={`avatar min-w-0 ${isOnline ? "online" : ""}`}>
                         <div className="w-12 rounded-full">
                             <img 
                                 src={profilePicUrl?.trim() || '/default-avatar.jpg'} 
@@ -60,7 +59,7 @@ const Conversation =({conversation, lastIdx}: ConversationProps) =>{
                             />
                         </div>
                     </div>
-                    <div className="flex flex-col flex-1">
+                    <div className="flex flex-col flex-1 min-w-0">
                         <div className="flex gap-3 justify-between">
                             <p className="font-bold text-gray-200 font-[Orbitron,sans-serif]">{conversation.name}</p>
                         </div>

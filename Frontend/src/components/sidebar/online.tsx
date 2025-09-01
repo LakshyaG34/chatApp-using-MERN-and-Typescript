@@ -17,7 +17,7 @@ const Online = () =>{
 //   }
 
     return(
-        <div className="py-2 flex flex-col overflow-auto">
+        <div className="flex-1 min-w-0 py-2 flex flex-col overflow-auto">
             {(conversations as ConversationType[]).map((conversation, idx) =>(
                 <Conversation
                 key={conversation._id}
@@ -25,7 +25,7 @@ const Online = () =>{
                 lastIdx={idx === (conversations as ConversationType[]).length - 1}
                 />
             ))}
-            {loading ? <span className='loading loading-spinner mx-auto'></span> : null}
+            {loading ? <span className='loading loading-spinner flex-1 min-w-0 mx-auto'></span> : null}
         </div>
     )
 }
