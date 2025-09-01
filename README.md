@@ -17,7 +17,8 @@ A real-time chat web application with a unique Cyberpunk-inspired theme, built u
 🛠 Scalable Architecture – Built with clean TypeScript + MERN stack.
 
 🖼 Preview
-Screenshot
+<img width="1239" height="841" alt="login" src="https://github.com/user-attachments/assets/7d45b357-169c-48c1-9614-fd69f54cb2d6" />
+
 
 🏗 Tech Stack
 
