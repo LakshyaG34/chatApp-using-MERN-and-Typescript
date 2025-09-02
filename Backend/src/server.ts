@@ -8,10 +8,12 @@ import { dbConnect } from "./lib/db";
 import cookieParser from "cookie-parser"
 // import cors from "cors"
 import path from "path";
+import dotenv from "dotenv"
+
+dotenv.config();
 
 
-
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 const app = express();
 
 const server = http.createServer(app);
@@ -70,5 +72,5 @@ export {io};
 
 server.listen(PORT, () =>{
     dbConnect();
-    console.log("Server listening on 4000")
+    console.log(`Server listening on ${PORT}`)
 })
