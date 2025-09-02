@@ -20,10 +20,10 @@ const Chat = () => {
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 blur-[80px] opacity-60"></div>
 
       <div
-        className="relative flex flex-row h-[520px] rounded-2xl overflow-hidden 
+        className="relative flex flex-row h-[60vh] sm:h-[80vh] md:h-[60vh] lg:h-[80vh] rounded-2xl overflow-hidden 
                   bg-gray-400/30 backdrop-blur-md shadow-lg"
       >
-        <SideBar/>  
+        <SideBar/>
         <MessageContainer />
       </div>
     </div>

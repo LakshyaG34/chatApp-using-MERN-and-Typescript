@@ -29,7 +29,7 @@ const MessageContainer = () =>{
     }, [setSelectedConversation]);
 
     return(
-        <div className="font-[Orbitron,sans-serif] flex flex-col flex-1 overflow-y-auto overflow-x-hidden h-full min-w-0 max-w-[320px]">
+        <div className="font-[Orbitron,sans-serif] flex flex-col flex-1 overflow-y-auto overflow-x-hidden min-w-0 max-w-[320px]">
             {!selectedConversation ? (
                 <NoChatSelected/>
             ) : (
