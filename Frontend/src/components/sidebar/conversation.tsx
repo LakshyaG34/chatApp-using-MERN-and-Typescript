@@ -50,18 +50,18 @@ const Conversation =({conversation, lastIdx}: ConversationProps) =>{
             <div className={`flex gap-2 items-center flex-1 min-w-0 transition duration-300 ease-in-out hover:bg-gradient-to-r hover:from-purple-900 hover:to-blue-900 hover:[box-shadow:0_0_15px_rgba(236,72,153,0.9),0_0_30px_rgba(59,130,246,0.8)]
              border border-transparent rounded p-2 py-1 cursor-pointer
                 ${isSelected ? "bg-gradient-to-r from-purple-700 to-blue-700 [box-shadow:0_0_15px_rgba(59,130,246,0.8),0_0_25px_rgba(236,72,153,0.7)]" : ""}`} onClick = {() => setSelectedConversation(conversation)}>
-                    <div className={`avatar min-w-0 ${isOnline ? "online" : ""}`}>
-                        <div className="w-12 rounded-full">
+                    <div className={`avatar min-w-0 shrink ${isOnline ? "online" : ""}`}>
+                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-full">
                             <img 
                                 src={profilePicUrl?.trim() || '/default-avatar.jpg'} 
                                 alt={conversation.name} 
-                                className="w-12 h-12 rounded-full object-cover"
+                                className="w-full h-full rounded-full object-cover"
                             />
                         </div>
                     </div>
                     <div className="flex flex-col flex-1 min-w-0">
-                        <div className="flex gap-3 justify-between">
-                            <p className="font-bold text-gray-200 font-[Orbitron,sans-serif]">{conversation.name}</p>
+                        <div className="flex gap-3 justify-between min-w-0">
+                            <p className="font-bold text-gray-200 font-[Orbitron,sans-serif] truncate">{conversation.name}</p>
                         </div>
                     </div>
             </div>

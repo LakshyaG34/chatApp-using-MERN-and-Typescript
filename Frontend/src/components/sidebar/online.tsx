@@ -17,7 +17,7 @@ const Online = () =>{
 //   }
 
     return(
-        <div className="flex-1 min-w-0 py-2 flex flex-col overflow-auto">
+        <div className="flex-1 min-w-0 py-2 flex flex-col gap-1 overflow-auto">
             {(conversations as ConversationType[]).map((conversation, idx) =>(
                 <Conversation
                 key={conversation._id}

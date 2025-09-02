@@ -130,6 +130,7 @@ transition duration-300 mb-8
                 placeholder="Enter your Password"
                 type="password"
                 value={password}
+                autoComplete="current-password"
                 onChange={(e) => setPassword(e.target.value)}
                 className="w-full max-w-md placeholder-[#22d3ee] [&::placeholder]:opacity-100 [&::placeholder]:text-shadow-[0_0_3px_#22d3ee,0_0_6px_#8b5cf6] border border-transparent rounded-full px-2 py-2 text-center bg-black/50 backdrop-blur-md [background:linear-gradient(#0a0a0a,#0a0a0a) padding-box,linear-gradient(to right,#8b5cf6,#ec4899,#3b82f6) border-box] focus:outline-none focus:ring-2 focus:ring-pink-500/70"
               />
@@ -159,7 +160,7 @@ transition duration-300 mb-8
             </div>
 
             <button
-              className="relative inline-block w-full sm:w-auto px-6 py-2 rounded-2xl text-white tracking-wider 
+              className="relative inline-block w-full sm:w-auto px-6 py-2 rounded-2xl text-white tracking-wider cursor-pointer
               bg-black/70 backdrop-blur-md border-2 border-transparent
               [background:linear-gradient(#0a0a0a,#0a0a0a) padding-box,linear-gradient(to right,#8b5cf6,#ec4899,#3b82f6) border-box] 
               transition duration-300 ease-in-out 

@@ -4,12 +4,11 @@ import SearchInput from "./searchInput"
 
 const SideBar = () =>{
     return(
-        <div className="border-r border-slate-500 p-4 flex flex-1 flex-col min-w-0 max-w-[240px]">
-            <div className="overflow-auto">
+        <div className="border-r border-slate-500 p-2 flex flex-1 flex-col min-w-0 max-w-[240px]">
                 <SearchInput/>
+            <div className="overflow-auto">
                 <Online/>
             </div>
-            {/* <div className='divider px-3'></div> */}
             <LogoutButton/>
         </div>
     )

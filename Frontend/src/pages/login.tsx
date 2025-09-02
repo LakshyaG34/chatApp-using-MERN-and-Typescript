@@ -74,6 +74,7 @@ transition duration-300 mb-8
                 placeholder="Enter your Password"
                 type="password"
                 value={password}
+                autoComplete="current-password"
                 onChange={(e) => setPassword(e.target.value)}
                 className="w-full max-w-md  placeholder-[#22d3ee] [&::placeholder]:opacity-100 [&::placeholder]:text-shadow-[0_0_3px_#22d3ee,0_0_6px_#8b5cf6] border border-transparent rounded-full px-2 py-2 text-center bg-black/50 backdrop-blur-md [background:linear-gradient(#0a0a0a,#0a0a0a) padding-box,linear-gradient(to right,#8b5cf6,#ec4899,#3b82f6) border-box] focus:outline-none focus:ring-2 focus:ring-pink-500/70"
               />
@@ -85,7 +86,7 @@ transition duration-300 mb-8
              transition duration-300 ease-in-out 
              hover:shadow-[0_0_20px_rgba(236,72,153,0.8)] 
              hover:scale-105 
-             focus:outline-none focus:ring-2 focus:ring-pink-500/70"
+             focus:outline-none focus:ring-2 focus:ring-pink-500/70 cursor-pointer"
             >
               SUBMIT
             </button>
@@ -94,7 +95,7 @@ transition duration-300 mb-8
       </div>
       <span className="flex flex-row gap-2 text-sm">
         Don't Have An Account :-
-        <Link to="/signup" className="flex flex-row items-center gap-1 text-red-400 transition duration-300 ease-in-out  hover:text-blue-300 ">
+        <Link to="/signup" className="flex flex-row items-center gap-1 text-red-400 transition duration-300 ease-in-out  hover:text-blue-300">
           <FaUserPlus/>
           <span>SIGNUP</span>
         </Link>

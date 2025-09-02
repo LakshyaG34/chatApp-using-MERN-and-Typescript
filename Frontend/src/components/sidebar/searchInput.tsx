@@ -50,7 +50,7 @@ const SearchInput = () => {
               focus:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-500 
               [background:linear-gradient(black,black) padding-box,linear-gradient(to right,#8b5cf6,#ec4899,#3b82f6) border-box] font-[Orbitron,sans-serif]"
         />
-        <button type="submit" className="btn btn-circle bg-sky-500 text-white">
+        <button type="submit" className="btn btn-circle border border-transparent bg-gradient-to-r from-purple-500 to-cyan-500 text-white shadow-[0_0_0px_transparent] transition-shadow duration-300 ease-in-out hover:shadow-[0_0_4px_#8b5cf6,0_0_10px_#06b6d4]">
           <IoSearchSharp className="w-6 h-6 outline-none" />
         </button>
       </form>

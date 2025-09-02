@@ -6,7 +6,9 @@ import usersRoute from "./route/user.route"
 import messageRoute from "./route/message.route"
 import { dbConnect } from "./lib/db";
 import cookieParser from "cookie-parser"
-import cors from "cors"
+// import cors from "cors"
+import path from "path";
+
 
 
 const PORT = 4000;
@@ -30,14 +32,20 @@ export const getReceiverSocketId = (receiverId : string) =>{
 
 app.use(cookieParser());
 app.use(express.json())
-app.use(cors({
-    origin: "http://localhost:5173", // frontend URL
-    credentials: true,               // allow cookies
-}));
+// app.use(cors({
+//     origin: "http://localhost:5173", // frontend URL
+//     credentials: true,               // allow cookies
+// }));
+
+app.use(express.static(path.join(__dirname, "../../Frontend/dist")));
 
 app.use("/api/auth", authRoute)
 app.use("/api/users", usersRoute)
 app.use("/api/message", messageRoute)
+
+app.get("*", (req : Request, res : Response)=>{
+    res.sendFile(path.join(__dirname, "../../Frontend/dist", "index.html"));
+})
 
 io.on("connection", (socket) =>{
     console.log("a user is connected", socket.id);
@@ -51,7 +59,7 @@ io.on("connection", (socket) =>{
 
     io.emit("getOnlineUsers", Object.keys(userSocketMap));
 
-    socket.on("disconnected", () => {
+    socket.on("disconnect", () => {
         console.log("user connected", socket.id);
         delete userSocketMap[userId];
         io.emit("getOnlineUsers", Object.keys(userSocketMap))
