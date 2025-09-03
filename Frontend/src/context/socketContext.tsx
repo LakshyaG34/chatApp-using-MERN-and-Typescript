@@ -28,7 +28,8 @@ export const SocketContextProvider = ({ children }: { children: ReactNode }) => 
     }
 
     const newSocket = io("https://lakshyagoyal-chatapp-mern-typescript.onrender.com", {
-      auth: { token: authUser }, // send JWT token
+      // auth: { token: authUser }, // send JWT token
+      query: { userId: authUser._id }, // send userId for mapping
       withCredentials: true,
     });
 
