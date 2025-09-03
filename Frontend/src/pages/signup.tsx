@@ -61,7 +61,7 @@ const Signup = () => {
         formData.append("profilePic", profilePic);
       }
 
-      const res = await fetch("http://localhost:4000/api/auth/signup", {
+      const res = await fetch("/api/auth/signup", {
         method: "POST",
         body: formData,
       });

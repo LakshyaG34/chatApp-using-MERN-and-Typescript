@@ -7,7 +7,7 @@ const useGetConversations = () =>{
         const getConversations = async() =>{
             setLoading(true);
             try{
-                const res = await fetch("http://localhost:4000/api/users", {
+                const res = await fetch("/api/users", {
                 method: "GET",
                 credentials: "include", // <- this sends cookies
                 });
