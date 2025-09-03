@@ -15,7 +15,7 @@ const UseGetMsg = () => {
       }
       try {
         const res = await fetch(
-          `http://localhost:4000/api/message/${selectedConversation._id}`,
+          `/api/message/${selectedConversation._id}`,
           {
             method: "GET",
             headers: {

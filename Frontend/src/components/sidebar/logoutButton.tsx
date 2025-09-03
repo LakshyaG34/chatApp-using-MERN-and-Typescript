@@ -11,7 +11,7 @@ const LogoutButton = () =>{
     const logout = async() =>{
         setLoading(true);
         try{
-            const res = await fetch("http://localhost:4000/api/auth/logout",{
+            const res = await fetch("/api/auth/logout",{
                 method : "POST",
                 headers: {"Content-type" : "application/json"},
                 credentials: "include",

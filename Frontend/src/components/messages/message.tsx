@@ -25,7 +25,7 @@ const Message = ({ message }: MessageProps, ) => {
             const fetchProfilePic = async() =>{
                 try{
                     const response = await fetch(
-                        `http://localhost:4000/api/users/profile-pic/${message.senderId}`,
+                        `/api/users/profile-pic/${message.senderId}`,
                         { credentials: "include" }
                     );
                     if(response.ok)

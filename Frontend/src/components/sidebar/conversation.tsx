@@ -24,7 +24,7 @@ const Conversation =({conversation, lastIdx}: ConversationProps) =>{
         const fetchProfilePic = async() =>{
             try{
                 const response = await fetch(
-                    `http://localhost:4000/api/users/profile-pic/${conversation._id}`,
+                    `/api/users/profile-pic/${conversation._id}`,
                     { credentials: "include" } // <--- include cookies for auth
                 );
                 if(response.ok)

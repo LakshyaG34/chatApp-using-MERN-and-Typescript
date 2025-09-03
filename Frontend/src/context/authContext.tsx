@@ -66,7 +66,7 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await axios.get("http://localhost:4000/api/auth/me", {
+        const res = await axios.get("/api/auth/me", {
           withCredentials: true, // send httpOnly cookie automatically
         });
         setAuthUserState(res.data.user); // set user object
