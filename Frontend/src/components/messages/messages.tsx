@@ -7,8 +7,7 @@ import useConversation from "../../zustand/useConversation";
 
 const Messages = () =>{
     const {messages, loading} = UseGetMsg();
-    const { socket } = useSocketContext(); // ⬅️ get socket
-    // const [liveMessages, setLiveMessages] = useState(messages);
+    const { socket } = useSocketContext();
     const { setMessages } = useConversation(); // from Zustand
 
     const lastMsgRef = useRef<HTMLDivElement | null>(null);
@@ -18,20 +17,10 @@ const Messages = () =>{
             lastMsgRef.current?.scrollIntoView({behavior : "smooth"});
         }, 100);
     }, [messages]);
-//     useEffect(() => {
-//     if (!socket) return;
-//     socket.on("newMessage", (newMsg) => {
-//         setLiveMessages((prev) => [...prev, newMsg]);
-//     });
-//     return () => {
-//         socket.off("newMessage");
-//     };
-//    }, [socket]);
-   // Listen for real-time messages
    useEffect(() => {
        if (!socket) return;
        socket.on("newMessage", (newMsg) => {
-           setMessages([...messages, newMsg]); // update Zustand messages
+           setMessages((prev) => [...prev, newMsg]); // update Zustand messages
        });
        return () => {
            socket.off("newMessage");
